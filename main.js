@@ -138,5 +138,23 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('neutChildDivs', JSON.stringify(Array.from(listofNeutNouns.children).map(x => x.innerHTML)));
           }
         });
-      });
+
+
+
+
+    // Linked / Github Redirects ----
+
+
+        document.getElementsByClassName("Linkdin")[0].addEventListener('click', function() {
+            event.preventDefault();
+            console.log("test")
+            window.location.href = "https://www.linkedin.com/in/max-bueckert-8712b4254/";
+        });
+
+        document.getElementsByClassName("GitHub")[0].addEventListener('click', function() {
+            event.preventDefault();
+            window.location.href = "https://github.com/maxbueckert";
+        });
+
+    });
 
