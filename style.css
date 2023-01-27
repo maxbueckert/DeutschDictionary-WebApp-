@@ -1,6 +1,8 @@
 
 header{
-    font-size: 80px;
+    margin-left: 20px;
+    font-size: 5rem;
+    overflow: hidden;
 }
 body {
     display: grid;
@@ -24,16 +26,16 @@ header {
 .formArea {
     grid-area: formArea;
     display: grid;
-    grid-template-areas:
-    'addNounArea searchNoun nav';
-    grid-template-columns: 2.5fr 5.6fr 3fr;
-    grid-template-rows: 1fr;
+    gap: 1rem;
+    grid-template-areas: 
+    'addNounArea nav';
+    grid-template-columns: 6fr 3fr;
 }
 
 
 .addNounArea {
     background-color:rgba(128, 0, 128, 0.474);
-    grid-area: addNounArea;
+    grid-area: addNounArea; 
     border-radius: 35px;
     padding: 20px;
     height: 80%;
@@ -43,8 +45,23 @@ header {
     'pluralInput submitNoun'
     'englishInput submitNoun';
     grid-template-columns: 3fr 1fr;
+    margin-left: .9%;
 
 }
+
+.nav {
+    grid-area: nav;
+    background-color: rgba(173, 196, 98, 0.512);
+    height: 100%;
+    border-radius: 35px;
+    padding: 20px;
+    height: 80%;
+    margin-right: .9%;
+
+}
+
+
+
 
 .nounInput {
     width: 100%;
@@ -79,12 +96,20 @@ header {
     width: 50%;
     height: 50%;
     font-size: 150%;
+    background-color: rgba(239, 235, 235, 0.871);
+    border-radius: 25px;
+    
 }
+
+
+
+
 
 .nouns {
     grid-area: content;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     gap: 1rem;
     padding: 10px;
     border-radius: 5%;
@@ -109,10 +134,12 @@ h3 {
     opacity: 100%;
     font-size: 1.3rem;
     margin: 0 auto;
+    
 }
 
 .listNouns {
     display: grid;
+    margin-top: 20px;
     grid-template-rows: repeat(40px);
     overflow: scroll;
     max-height: 70vh;
@@ -125,6 +152,7 @@ h3 {
     'nounListMember removeNoun';
     grid-template-columns:4fr 30px;
 
+
 }
 
 .removeNoun {
@@ -136,21 +164,65 @@ h3 {
 
 .nounInfo {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1.125fr 1fr 1fr;
 }
 
 .nounString {
     display: flex;
     flex-direction: column;
     justify-content: top;
+    left: 100;
     font-size: 20px;
+    margin: 0 auto;
+    
 }
 
 
-.footer {
+footer {
     grid-area: footer;
 }
 
+.footnote {
+    position: absolute;
+    bottom: 2%;
+    left: 5%;
+    color:rgba(114, 117, 104, 0.858)
+}
+
+.referals {
+    position: absolute;
+    right: 1%;
+    bottom: 1%
+    
+}
+
+.Linkdin {
+    width: 30px;
+    height: 30px;
+    background-image: url('linkedin.png');
+    background-size: cover;
+    border: none;
+    border-radius: 20%;
+    }
+
+.Linkdin:hover {
+    opacity: 70%;
+    }
+
+
+.GitHub {
+
+    width: 30px;
+    height: 30px;
+    background-image: url('github.png');
+    background-size: cover;
+    border: none;
+    border-radius: 20%;
+    }
+
+.GitHub:hover {
+    opacity: 70%;
+    }
 
 
 
