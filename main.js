@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             (germanNoun.substring(0,3) != "der") && 
             (germanNoun.substring(0,3) != "die") && 
             (germanNoun.substring(0,3) != "das")) {
+                alert("Please enter a valid German noun with its correct definitive article. For example, 'der Mann' is a valid input, 'Mann' is not.");
                 return;
             }
 
