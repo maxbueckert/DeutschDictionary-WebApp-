@@ -1,6 +1,7 @@
 
 header{
-    font-size: 80px;
+    font-size: 5rem;
+    overflow: hidden;
 }
 body {
     display: grid;
@@ -24,16 +25,24 @@ header {
 .formArea {
     grid-area: formArea;
     display: grid;
-    grid-template-areas:
-    'addNounArea searchNoun nav';
-    grid-template-columns: 2.5fr 5.6fr 3fr;
-    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'addNounArea xd xd'
+    'test test test';
+    grid-template-columns:5.6fr 3fr;
+    grid-row: 1fr 5fr;
+}
+
+.nav {
+    grid-area: test;
+    background-color: black;
+    width: 100%;
+    height: 100%;
 }
 
 
 .addNounArea {
     background-color:rgba(128, 0, 128, 0.474);
-    grid-area: addNounArea;
+    grid-area: addNounArea; 
     border-radius: 35px;
     padding: 20px;
     height: 80%;
@@ -45,6 +54,7 @@ header {
     grid-template-columns: 3fr 1fr;
 
 }
+
 
 .nounInput {
     width: 100%;
@@ -81,10 +91,23 @@ header {
     font-size: 150%;
 }
 
+
+
+.searchNoun {
+    background-color:rgba(128, 0, 128, 0.474);
+    border-radius: 35px;
+    grid-area: addNounArea;
+    padding: 20px;
+    height: 80%;
+    
+}
+
+
 .nouns {
     grid-area: content;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     gap: 1rem;
     padding: 10px;
     border-radius: 5%;
