@@ -56,15 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let pluralNoun = pluralInput.value;
         let englishNoun = englishInput.value;
 
-
-        if (germanNoun == "die") {
-
-        }
         
         if  (germanNoun.length < 3 ||
-            (germanNoun.substring(0,4) != "der") && 
-            (germanNoun.substring(0,4) != "die") && 
-            (germanNoun.substring(0,4) != "das")) {
+            (germanNoun.substring(0,3) != "der") && 
+            (germanNoun.substring(0,3) != "die") && 
+            (germanNoun.substring(0,3) != "das")) {
                 return;
             }
 
@@ -74,8 +70,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let newDivInfo = document.createElement('info');
             newDivInfo.className = ('nounInfo');
-          
-     
+            let outputGermanNoun = document.createElement('outputGermanNoun');
+                outputGermanNoun.className = ('nounString')
+            let outputPluralNoun = document.createElement('outputPluralNoun');
+                outputPluralNoun.className = ('nounString');
+            let outputEnglishNoun = document.createElement('outputEnglishNoun');
+                outputEnglishNoun.className = ('nounString');
+
+            outputGermanNoun.innerText = germanNoun;
+            outputPluralNoun.innerText = pluralNoun;
+            outputEnglishNoun.innerText = englishNoun;
+
+            newDivInfo.appendChild(outputGermanNoun);
+            newDivInfo.appendChild(outputPluralNoun); 
+            newDivInfo.appendChild(outputEnglishNoun);
+
+            
+
 
         let newDivExit = document. createElement('remove');
             newDivExit.innerHTML = " <button class= 'removeNounButton' >X</button> "
@@ -87,18 +98,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // logic 
 
-            if (germanNoun.substring(0,4) == "der"){
+            if (germanNoun.substring(0,3) == "der"){
                 listofMascNouns.insertBefore(newParentDiv, listofMascNouns.firstChild);
                 localStorage.setItem('mascChildDivs', JSON.stringify(Array.from(listofMascNouns.children).map(x => x.innerHTML)));
+
                 
             }
-            else if (germanNoun.substring(0,4) == "die"){
+            else if (germanNoun.substring(0,3) == "die"){
                 listofFemNouns.insertBefore(newParentDiv, listofFemNouns.firstChild);
                 localStorage.setItem('femChildDivs', JSON.stringify(Array.from(listofFemNouns.children).map(x => x.innerHTML)));
                 
             }
 
-            else if (germanNoun.substring(0,4) == "das") {
+            else if (germanNoun.substring(0,3) == "das") {
                 listofNeutNouns.insertBefore(newParentDiv, listofNeutNouns.firstChild);
                 localStorage.setItem('neutChildDivs', JSON.stringify(Array.from(listofNeutNouns.children).map(x => x.innerHTML)));
             };

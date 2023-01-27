@@ -121,7 +121,6 @@ h3 {
 
 .nounListMember {
     display: grid;
-    font-size: 50px;
     grid-template-areas: 
     'nounListMember removeNoun';
     grid-template-columns:4fr 30px;
@@ -135,7 +134,17 @@ h3 {
 
 }
 
+.nounInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 
+.nounString {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    font-size: 20px;
+}
 
 
 .footer {
